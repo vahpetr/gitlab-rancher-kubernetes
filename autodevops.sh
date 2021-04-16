@@ -46,7 +46,7 @@ echo "Secret => ${SECRET}"
 echo "#-----------------------"
 STEP="Get CA Certificate"
 echo ${STEP}
-kubectl -n ${NAMESPACE} get secret $SECRET -o jsonpath="{['data']['ca\.crt']}" | base64 --decode
+kubectl -n ${NAMESPACE} get secret $SECRET -o jsonpath="{['data']['ca\.crt']}" | base64 -d
 
 echo "#-----------------------"
 STEP="Get Token from Secret"
